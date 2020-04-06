@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles/Form.css'
 
+
 function FormHeader() {
     return(
         <div>
@@ -11,16 +12,49 @@ function FormHeader() {
     )
 }
 
+function getStatesList(): any{
+    const states:[string] = [""]
+    return(
+        <div>
+            <option></option>
+        </div>
+    )
+}
+
+function StateDropdownList(){
+    return(
+        <div>
+            <select id="states_select">
+                {getStatesList()}
+            </select>
+        </div>
+    )
+}
+
 function FormBody(){
     return(
         <div>
             <form action="form.php" method="POST">
                 <section>
                     <div>
-                        <input></input>
+                        <label>Applicant Name: <input id="applicant_name" />
+                        </label>
                     </div>
                     <div>
-                        <input></input>
+                        <label>Applicant's School Name: <input id="applicant_school" />
+                        </label>
+                    </div>
+                    <div>
+                       <StateDropdownList />
+                    </div>
+                </section>
+                <section>
+
+                    <div>
+                        <input type="submit" id="submit" name="Submit"/>
+                    </div>
+                    <div>
+                        <input type="button" id="cancell" name="Cancel"/>
                     </div>
                 </section>
             </form>
