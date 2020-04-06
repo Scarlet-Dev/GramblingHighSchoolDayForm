@@ -10,50 +10,46 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: [path.resolve(__dirname) + '/src/index.tsx', ],
+    mode: "development",
+    target: 'web',
+    entry: [ './src/index.tsx' ],
+    devtool: 'source-map',
+    resolve: { 
+        extensions: ['.ts', '.tsx', '.js', '.scss', '.css'] 
+    },
     output: {
-        filename: './dist/bundle.js'
+        path: path.resolve(__dirname, './dist/'),
+        filename: 'bundle.js'
      },
-    devtool: 'inline-source-map',
-    module: {
+     module: {
         rules:[
             { 
                 test: /\.tsx?$/, 
-                loader: 'ts-loader' ,
-                exclude: [/node_modules/]
-            },
-            {
-                test: /\.js$/,
-                loader: 'source-map-loader',
-                enforce: 'pre'
+                loader: 'ts-loader',
+                include: [path.resolve(__dirname, "./src")],
+                // presets: [''],
+                exclude: [/node_modules/],
             },
             { 
-                test: /\.s(c|a)ss?$/, 
-                loader: 'sass',
-                options: {
-                    modules: true,
-                    sourceMap: isDevelopment
-                }
-            },
-            {
-                test: /\.s(c|a)ss?$/,
-                exclude: /\.module.(s(c|s)ss)$/,
-                loader: ['style-loader', 'css-loader', 'sass-loader']
+                test: /\.s[c|a]ss?$/,
+                use:[
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' },
+                    { loader: 'sass-loader' },
+                ] 
             },
             {
                 test: /\.html/,
-                loader: 'html-loader'
+                loader: 'html-loader',
             }
         ],
-    },
-    resolve: { 
-        extensions: ['.ts', '.tsx', '.js', '.scss'] 
     },
     plugins:[
         new CleanWebpackPlugin(),
         new HtmlWebPackPlugin({
-            template: './index.html',
-            filename: './index.html'
+            template: 'src/index.html',
+            inject: true,
+            filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
             filename: isDevelopment ? '[name].css' : '[name].[hash].css'
