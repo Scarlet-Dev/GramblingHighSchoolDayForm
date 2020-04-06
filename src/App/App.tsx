@@ -1,7 +1,10 @@
 import React from 'react'
 import Form from '../Form/Form';
-import './App.css'
+import './App.scss'
 
+/**
+ * 
+ */
 function AppHeader(){
     return(
         <div>
