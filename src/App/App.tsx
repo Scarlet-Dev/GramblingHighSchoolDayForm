@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from '../Form/Form';
-import './App.scss'
+import './App.scss';
 
 /**
  * 
@@ -8,7 +8,7 @@ import './App.scss'
 function AppHeader(){
     return(
         <div>
-            <header></header>
+            <header>Header Here</header>
         </div>
     )
 }
@@ -20,7 +20,7 @@ function AppFooter() {
     return(
         <div>
             <footer>
-
+                Footer Here
             </footer>
         </div>
     )
