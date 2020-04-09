@@ -25,14 +25,49 @@ export function Button(props: any){
     )
 }
 
+
+/**
+ * 
+ * @param props 
+ */
 export function Input(props: any){
     let handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
         let inputValue = event.target.value;
     }
-    return(
-        <input type={props.type} name={props.name} />
-    );
+    switch (props.type) {
+        case 'text':
+            return(
+                <input type={props.type} name={props.name} min="" max="" value=""/>
+            );
+        case 'range':
+        case 'number':
+            return(
+                <input type={props.type} name={props.name} min="" max="" step="" value={props.value || null}/>
+            );
+        case 'date':
+        case 'datetime-local':
+        case 'month':
+        case 'week':
+            return(
+                <input type={props.type} name={props.name} min="" max=""/>
+            );
+        case 'tel':
+            return(
+                <input type={props.type} name={props.name} pattern={props.pattern || "[0-9]{3}-[0-9]{3}-[0-9]{4}"}/>
+            );
+        case 'password':
+        case 'radio':
+        case 'checkbox':
+        case 'file':
+        case 'reset':
+        case 'url':
+            default:
+            return(
+                <input type={props.type} name={props.name} value=""/>
+            );
+    }
 }
+
 
 /**
  * 
