@@ -1,52 +1,72 @@
-import React from 'react'
+import React from 'react';
+import { Route, Link, Switch } from 'react-router-dom'
+import { Header, Footer } from "../Components/components";
+
+import About from '../About/About';
+import Contact from '../Contact/Contact';
 import Form from '../Form/Form';
+
 import './App.scss';
 
 /**
+ * @whatItDoes Application navigation form.
+ */
+function AppNav(){
+    return(
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/about">About</Link>
+                    </li>
+                    <li>
+                        <Link to="/register">Register</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">Contact</Link>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    )
+}
+
+/**
+ * @whatItDoes 
+ */
+function AppHome(){
+    return(<div>
+
+    </div>)
+}
+
+
+/**
+ * @whatItDoes App entry point
  * 
+ * Sent to index to be rendered in index class.
  */
-function AppHeader(){
+export default function App(){
     return(
         <div>
-            <header>Header Here</header>
+            <AppNav />
+            <Switch>
+                <Route path="/">
+                    <AppHome />
+                </Route>
+                <Route path="/about">
+                    <About />
+                </Route>
+                <Route path="/register">
+                    <Form />
+                </Route>
+                <Route path="/contact">
+                    <Contact />
+                </Route>
+            </Switch>
         </div>
     )
 }
-
-/**
- * 
- */
-function AppFooter() {
-    return(
-        <div>
-            <footer>
-                Footer Here
-            </footer>
-        </div>
-    )
-}
-
-
-/**
- * Where Form and Header are rendered
- */
-function App(){
-    return(
-        <div>
-            <div>
-                <AppHeader />
-            </div>
-
-            <Form></Form>
-
-            <div>
-                <AppFooter />
-            </div>
-        </div>
-    )
-}
-
-/**
- * Sent to index to be rendered in index.html
- */
-export default App;
