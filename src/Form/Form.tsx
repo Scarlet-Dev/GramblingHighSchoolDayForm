@@ -1,71 +1,36 @@
 import React from 'react'
+
+// import { Input, Label, SelectList } from "../Components/components";
+// import 'src/static/states';
+
 import './Form.scss'
 
 
-function FormHeader() {
-    return(
-        <div>
-            <div>
-                <span>Form Header</span>
-            </div>
-        </div>
-    )
-}
-
-function getStatesList(): any{
-    const states:[string] = [""]
-    return(
-        <div>
-            <option></option>
-        </div>
-    )
-}
-
-function StateDropdownList(){
-    return(
-        <div>
-            <select id="states_select">
-                {getStatesList()}
-            </select>
-        </div>
-    )
-}
-
 function FormBody(){
     return(
-        <div>
-            <form action="form.php" method="POST">
-                <section>
-                    <div>
-                        <label>Applicant Name: <input id="applicant_name" />
-                        </label>
-                    </div>
-                    <div>
-                        <label>Applicant's School Name: <input id="applicant_school" />
-                        </label>
-                    </div>
-                    <div>
-                       <StateDropdownList />
-                    </div>
-                </section>
-                <section>
+        <form action="/form.php" method="POST">
+            <section>
+                <div>
+                    <label>Applicant Name: <input id="applicant_name" />
+                    </label>
+                </div>
+                <div>
+                    <label>Applicant's School Name: <input id="applicant_school" />
+                    </label>
+                </div>
+                <div>
+                </div>
+            </section>
+            <section>
 
-                    <div>
-                        <input type="submit" id="submit" name="Submit"/>
-                    </div>
-                    <div>
-                        <input type="button" id="cancell" name="Cancel"/>
-                    </div>
-                </section>
-            </form>
-        </div>
+                
+            </section>
+        </form>
     )
 }
 
-function Form(){
+export default function Form(){
     return(
         <FormBody />
-    )
+    );
 }
-
-export default Form
