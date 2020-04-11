@@ -38,9 +38,16 @@ function AppNav(){
  * @whatItDoes 
  */
 function AppHome(){
-    return(<div>
-
-    </div>)
+    return(
+        <section>
+            <div className="hero">
+                <h1>Welcome to High School Day!</h1>
+            </div>
+            <div>
+                
+            </div>
+        </section>
+    );
 }
 
 
@@ -67,6 +74,7 @@ export default function App(){
                     <Contact />
                 </Route>
             </Switch>
+            <Footer />
         </div>
     )
 }
