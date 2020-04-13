@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
-import { Header, Footer } from "../Components/components";
+import { GeneralElements } from "../Components/components";
 
 import About from '../About/About';
 import Contact from '../Contact/Contact';
@@ -8,45 +8,50 @@ import Form from '../Form/Form';
 
 import './App.scss';
 
+const ge = new GeneralElements();
+
 /**
  * @whatItDoes Application navigation form.
  */
-function AppNav(){
+const AppNav = () => {
     return(
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/register">Register</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact">Contact</Link>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/register">Register</Link>
+                </li>
+                <li>
+                    <Link to="/contact">Contact</Link>
+                </li>
+            </ul>
+        </nav>
     )
 }
 
 /**
  * @whatItDoes 
  */
-function AppHome(){
+const AppHome = () => {
     return(
-        <section>
-            <div className="hero">
-                <h1>Welcome to High School Day!</h1>
-            </div>
-            <div>
+        <div id="appHome">
+
+            <section className="hero" id="hero">
+                <h1 className="hero-title">Welcome</h1>
+                <p className="hero-subtitle">
+                    Greetings prospective students! Welcome to Grambling State University's bi-annual High School Day!
+                </p>
+            </section>
+
+            <section>
                 
-            </div>
-        </section>
+            </section>
+        </div>
     );
 }
 
@@ -58,12 +63,9 @@ function AppHome(){
  */
 export default function App(){
     return(
-        <div>
+        <div className="container">
             <AppNav />
             <Switch>
-                <Route path="/">
-                    <AppHome />
-                </Route>
                 <Route path="/about">
                     <About />
                 </Route>
@@ -73,8 +75,11 @@ export default function App(){
                 <Route path="/contact">
                     <Contact />
                 </Route>
+                <Route path="/">
+                    <AppHome />
+                </Route>
             </Switch>
-            <Footer />
+            <ge.Footer />
         </div>
     )
 }
