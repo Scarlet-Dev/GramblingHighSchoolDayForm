@@ -1,49 +1,93 @@
 import React from "react";
 import "./components.scss";
 
-/**
- * @whatItDoes Readily available header component
- * 
- * @param props 
- */
-function Header(props: any){
-    return(
-        <header>
-            <h1></h1>
-        </header>
-    )
-}
 
-/**
- * @whatItDoes
- * 
- * @param props 
- */
-function Button(props: any){
-    return(
-        <button name={props.name} onClick={props.method}></button>
-    )
-}
+export class GeneralElements{
+    constructor(){}
 
-/**
- * 
- * @param props
- */
-function Footer(props: any) {
-    return(
-        <footer>
-            <span>
-                Footer Here
-            </span>
-        </footer>
-    )
+    /**
+     * @whatItDoes
+     * 
+     * @param props 
+     */
+    Button(props: any){
+        return(
+            <button name={props.name} onClick={props.method || null}>
+                {props.message}
+            </button>
+            )
+    }
+
+    /**
+     * 
+     * @param props 
+     */
+    Card (props: any){
+
+    }
+
+    /**
+     * 
+     * @param props 
+     */
+    Comments (props: any){
+
+    }
+
+    /**
+     * 
+     * @param props
+     */
+    Footer(props: any) {
+        return(
+            <footer>
+                <span>
+                    Footer Here
+                </span>
+            </footer>
+            )
+    }
+
+    /**
+     * 
+     * @param props 
+     */
+    GridBasic(props: any){
+
+    }
+    
+    /**
+     * @whatItDoes Readily available header component
+     * 
+     * @param props 
+     */
+    Header(props: any){
+        return(
+            <header>
+                <h1></h1>
+            </header>
+        )
+    }
+
+    /**
+     * 
+     * @param props 
+     */
+    Modal (props: any){
+    
+    }
+    
+    /**
+     * 
+     */
+    Table (){
+
+    }
 }
 
 export class FormElements{
 
-    constructor(){
-
-    }
+    constructor(){}
     
     /**
      * 
@@ -64,13 +108,13 @@ export class FormElements{
             case 'text':
                 return(
                     <input type={props.type} id={props.id} minLength={props.min || 1} maxLength={props.max || 100} 
-                    value={props.value || ""} placeholder={props.placeholder || ""}/>
+                    placeholder={props.placeholder || ""}/>
                 );
             case 'range':
             case 'number':
                 return(
                     <input type={props.type} id={props.id} min={props.min || 1} max={props.max || 100} 
-                    step={props.step || 1} value={props.value || ''}/>
+                    step={props.step || 1} />
                 );
             case 'date':
             case 'datetime-local':
@@ -79,9 +123,11 @@ export class FormElements{
                 return(
                     <input type={props.type} id={props.id} min={props.main || ""} max={props.max || ""}/>
                 );
+            case 'email':
             case 'tel':
                 return(
-                    <input type={props.type} id={props.id} pattern={props.pattern || "[0-9]{3}-[0-9]{3}-[0-9]{4}"}/>
+                    <input type={props.type} id={props.id} pattern={props.pattern || "[0-9]{3}-[0-9]{3}-[0-9]{4}"} 
+                    placeholder={props.placeholder || ""}/>
                 );
             case 'password':
             case 'radio':
@@ -91,7 +137,7 @@ export class FormElements{
             case 'url':
                 default:
                 return(
-                    <input type={props.type} id={props.id} value={props.value || ""}/>
+                    <input type={props.type} id={props.id}/>
                 );
         }
     }
@@ -100,11 +146,14 @@ export class FormElements{
     /**
      * 
      * @param props 
+     * @property props.id
+     * @property props.for
+     * @property props.text
      */
     Label(props: any){
         return(
-            <label id={props.id}>
-                {props.message}
+            <label id={props.id} htmlFor={props.for}>
+                {props.text}
             </label>
         )
     }
@@ -112,11 +161,14 @@ export class FormElements{
     /**
      * 
      * @param props
-     * @property name 
+     * @property props.id 
+     * @property props.rows 
+     * @property props.cols 
+     * @property props.placeholder 
      */
     TextArea(props: any){
         return(
-            <textarea rows={props.row || 4} cols={props.cols || 50} placeholder={props.placeholder || ""}></textarea>
+            <textarea id={props.id} rows={props.row || 4} cols={props.cols || 50} placeholder={props.placeholder || ""}></textarea>
         )
     }
 
@@ -124,7 +176,7 @@ export class FormElements{
      * 
      * @param props 
      */
-    SelectList(props: any){
+    Dropdown(props: any){
 
         let handleChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
             let selectedValue = event.target.value;
@@ -145,4 +197,28 @@ export class FormElements{
         )
     }
 
+}
+
+export class SpecialComponents{
+    constructor(){}
+    
+    Carousel (props: any){
+
+    }
+
+    Chart() {
+        
+    }
+
+    GridExpanding (){
+
+    }
+
+    Lightbox (props: any){
+        
+    }
+
+    Tile (){
+
+    }
 }
