@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contact.scss';
-import { FormElements } from 'src/Components/components';
+import { FormElements } from '../Components/components';
 
 export default function Contact(){
     const fe = new FormElements();
@@ -15,10 +15,13 @@ export default function Contact(){
                 <fe.Input type="tel" placeholder="Enter Phone Number"/>
             </div>
             <div>
-                <fe.Input type="email"/>
+                <fe.Input type="email" placeholder="Enter Email Address"/>
             </div>
             <div>
                 <fe.TextArea placeholder="Please enter any questions or comments" />
+            </div>
+            <div>
+                <fe.Input type="submit" message="Submit" />
             </div>
         </form>
         </div>
