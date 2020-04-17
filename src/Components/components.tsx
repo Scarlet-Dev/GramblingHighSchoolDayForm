@@ -42,7 +42,7 @@ export class GeneralElements{
         return(
             <footer>
                 <span>
-                    Footer Here
+                    {props.children}
                 </span>
             </footer>
             )
