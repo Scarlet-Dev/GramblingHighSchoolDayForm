@@ -1,51 +1,98 @@
-nav {
+.container{
+    background-color: white;
+    margin: 0em 4em;
 
-    ul {
-        margin: 0;
-        padding: 0;
-        
-        // 
-        list-style: none;
-        background-color: gold;
-        
-        // Display
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: space-evenly;  
-        ul :hover{
-            text-decoration: underline coral;
-        }
-        ul:active {
-            text-decoration-color: cadetblue;
-        }
-
-        li{
-            display: inline-block;
-            a{
-                display: block;
-                text-decoration-line: none;
-                font-size: 2.5em;
-                color: white;
-                text-shadow: rgba($color: #000000, $alpha: 0.25) 1px 0 10px;
+    .info{
+        margin: 0em 4.5em;
+        .entry{
+            position: relative;
+            
+            h1{
+                font-size: 30px;
             }
-        }   
-    }
-}
-.hero{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    line-height: 1em;
-    padding: .5em 2em;
-    margin: 2em 2em;
+            //specifity seems to be the issue when using nth-child
+            //basically, if the selectors are of the same level then
+            //the last selector will be called instead of each.
+            h1:nth-child(n+1){
+                float: right;
+                background-color: red;
+            }
+            h1:nth-child(2n+0){
+                float: left;
+                background-color: blue;
+            }
 
-    .hero-title{
-        font-size: 100px;
+            p{
+                font-size: 20px;
+            }
+        }
+        // .entry p:nth-child(even){
+        //     float: right;
+        //     clear: right;
+        // }
+        // .entry p:nth-child(odd){
+        //     float: left;
+        //     clear: both;
+        // }
     }
-    .hero-subtitle{
-        font-size: 30px;
-        margin: 0.1em 0em;
+    
+    nav {
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            
+            // 
+            list-style: none;
+            background-color: gold;
+            
+            // Display
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-evenly;  
+            ul :hover{
+                text-decoration: underline coral;
+            }
+            ul:active {
+                text-decoration-color: cadetblue;
+            }
+            
+            li{
+                display: inline-block;
+                a{
+                    display: block;
+                    text-decoration-line: none;
+                    font-size: 2.5em;
+                    color: white;
+                    text-shadow: rgba($color: #000000, $alpha: 0.25) 1px 0 10px;
+                }
+            }   
+        }
+    }
+
+    footer{
+        padding: 1em 2em;
+        margin: 0em 3em;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .hero{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1em;
+        padding: .5em 2em;
+        margin: 2em 2em;
+        
+        .hero-title{
+            font-size: 100px;
+        }
+        .hero-subtitle{
+            font-size: 30px;
+            margin: 0.1em 0em;
+        }
     }
 }
