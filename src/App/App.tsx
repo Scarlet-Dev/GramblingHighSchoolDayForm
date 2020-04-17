@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
+import * as faker from 'faker';
 import { GeneralElements } from "../Components/components";
 
 import About from '../About/About';
