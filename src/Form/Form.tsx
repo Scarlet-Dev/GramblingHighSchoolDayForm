@@ -1,6 +1,8 @@
 import React from 'react'
 import './Form.scss'
 
+const states = require('../static/states');
+const interests = require('../static/interests');
 
 function FormBody(){
     const fe = new FormElements();
