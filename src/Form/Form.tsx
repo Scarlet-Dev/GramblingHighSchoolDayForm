@@ -32,37 +32,61 @@ const Dropdown = (props: any) => {
 function FormBody(){
 
     let today = new Date();
-    let maxDate = new Date(today.getUTCFullYear(), today.getMonth(), today.getDate())
+    let maxDate = new Date(today.getUTCFullYear(), today.getMonth(), today.getDate());
+    
+
+
     return(
+        <div className="form">
+        <h1>Register Now!</h1>
         <form action="/api/form.php" method="POST">
-                <div>
-                    <fe.Label id="applicant_name_label" text="Applicant Name:" for="applicant_name"/>
-                    <fe.Input id="applicant_name" type="text"/>
+                <div className="form form-group">
+                    <label id="applicant_name_label" htmlFor="applicant_name">Applicant Name:</label>
+                    <input id="applicant_name" type="text"/>
                 </div>
-                <div>
-                    <fe.Label id="applicant_school_label" text="Applicant's School Name:" for="applicant_school"/>
-                    <fe.Input id="applicant_school" type="text"/>
+                <div className="form form-group">
+                    <label id="applicant_school_label" htmlFor="applicant_school">Applicant's School Name: </label>
+                    <input id="applicant_school" type="text"/>
                 </div>
-                <div>
-                    <fe.Label id="applicant_dob_label" text="Applicant's Date of Birth: "  for="applicant_dob"/>
-                    <fe.Input id="applicant_dob" type="date" max={maxDate}/>
+                <div className="form form-group">
+                    <label id="applicant_dob_label" htmlFor="applicant_dob">Applicant's Date of Birth: </label>
+                    <input id="applicant_dob" type="date" max={maxDate.getTime()}/>
                 </div>
-                <div>
-                    <fe.Label id="applicant_email_label" text="Applicant Email" for="applicant_email"/>
-                    <fe.Input id="applicant_email" type="email"/>
+                <div className="form form-group">
+                    <div>
+                        <label id="applicant_city_label" htmlFor="">Applicant's City: </label>
+                        <input id="applicant_city" type="text"/>
+                    </div>
+                    <div>
+                        <label>Applicant's State: </label>
+                        <Dropdown id="applicant_state" data={states}>State</Dropdown>
+                    </div>
+                    <div>
+                        <label id="applicant_zip_code_label" htmlFor="applicant_zip_code">Applicant's ZIP Code: </label>
+                        <input id="applicant_zip_code" type="text" maxLength={5}/>
+                    </div>
+                </div>
+                <div className=" form form-group">
+                    <label id="applicant_email_label" htmlFor="applicant_email">Applicant Email: </label>
+                    <input id="applicant_email" type="email"/>
+                </div>
+                <div className="form form-group">
+                    <label id="" htmlFor="applicant_interests">Please select an interests: </label>
+                    <Dropdown id="applicant_interests" data={interests}>Please select an interests</Dropdown>
                 </div>
 
-                <div>
+                <div className="form form-group">
                     <span>
-                        <ge.Button id="applicant_cancel" message="Cancel" />
+                        <button id="applicant_cancel">Cancel</button>
                     </span>
                 
                     <span>
-                        <fe.Input id="applicant_submit" message="Submit" type="submit" />
+                        <input id="applicant_submit" name="Submit" type="submit" />
                     </span>
                 </div>
             
         </form>
+        </div>
     )
 }
 
