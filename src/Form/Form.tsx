@@ -1,7 +1,5 @@
 import React from 'react'
 import './Form.scss'
-import { FormElements, GeneralElements } from '../Components/components'
-// import 'src/static/states';
 
 
 function FormBody(){
