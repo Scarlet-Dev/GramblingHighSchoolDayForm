@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
 import * as faker from 'faker';
-import { GeneralElements } from "../Components/components";
 
 import About from '../About/About';
 import Contact from '../Contact/Contact';
@@ -9,7 +8,6 @@ import Form from '../Form/Form';
 
 import './App.scss';
 
-const ge = new GeneralElements();
 
 /**
  * @whatItDoes Application navigation form.
@@ -178,12 +176,15 @@ export default function App(){
                     <AppHome />
                 </Route>
             </Switch>
-            <ge.Footer className="footer">
+            <footer className="footer">
                 <hr></hr>
                 <p>
                     Created by Akane Simpson &copy; 2020
                 </p>
-            </ge.Footer>
+                <p>
+                    Visit the <a href="https://www.gram.edu">univeristy homepage</a> and register today!
+                </p>
+            </footer>
         </div>
     )
 }
