@@ -1,27 +1,30 @@
 import React from 'react';
 import './Contact.scss';
-import { FormElements } from '../Components/components';
+
+const interests = require('../static/interests')
 
 export default function Contact(){
-    const fe = new FormElements();
     return(
         <div>
         <h3></h3>
         <form action="/api/contact.php" >
             <div>
-                <fe.Input type="text" placeholder="Enter Full Name"/>
+                <input type="text" placeholder="Enter Full Name"/>
             </div>
             <div>
-                <fe.Input type="tel" placeholder="Enter Phone Number"/>
+                <input type="tel" placeholder="Enter Phone Number"/>
             </div>
             <div>
-                <fe.Input type="email" placeholder="Enter Email Address"/>
+                <input type="email" placeholder="Enter Email Address"/>
             </div>
             <div>
-                <fe.TextArea placeholder="Please enter any questions or comments" />
+                
             </div>
             <div>
-                <fe.Input type="submit" message="Submit" />
+                <textarea placeholder="Please enter any questions or comments" cols={3}></textarea>
+            </div>
+            <div>
+                <input type="submit" name="Submit" />
             </div>
         </form>
         </div>
