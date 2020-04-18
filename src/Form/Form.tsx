@@ -4,9 +4,32 @@ import './Form.scss'
 const states = require('../static/states');
 const interests = require('../static/interests');
 
+
+const Dropdown = (props: any) => {
+
+    let handleChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
+        let selectedValue = event.target.value;
+        props.onSelectChange(selectedValue);
+    }
+
+    let arrayOfData = props.data;
+    console.log(...arrayOfData);
+    let options= arrayOfData.map((data: any) =>
+        {
+                <option key={data.id} value={data.value}>
+                    {data.name}
+                </option>
+        });
+
+    return(
+        <select id={props.id} className="form-group dropdown" onChange={handleChange}>
+            {options}
+        </select>
+    );
+}
+
+
 function FormBody(){
-    const fe = new FormElements();
-    const ge = new GeneralElements();
 
     let today = new Date();
     let maxDate = new Date(today.getUTCFullYear(), today.getMonth(), today.getDate())
