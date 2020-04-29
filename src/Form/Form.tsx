@@ -16,8 +16,7 @@ const Dropdown = (props: any) => {
     }
 
     let arrayOfData = props.data;
-    console.log(...arrayOfData);
-    let options= arrayOfData.map((data: any) =>
+    let options= arrayOfData.map((obj: any) =>
         {
                 <option key={data.id} value={data.value}>
                     {data.name}
