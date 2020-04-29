@@ -3,6 +3,10 @@ import './Contact.scss';
 
 import programs from "../../public/json/programs.json";
 
+const submitForm = () => {
+
+}
+
 export default function Contact(){
     return(
         <div>
