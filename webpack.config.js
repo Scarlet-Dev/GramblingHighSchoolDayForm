@@ -15,7 +15,7 @@ module.exports = {
     entry: [ './src/index.tsx' ],
     devtool: 'source-map',
     resolve: { 
-        extensions: ['.ts', '.tsx', '.js', '.scss', '.css'] 
+        extensions: ['.ts', '.tsx', '.js', '.scss', '.css', '.json'] 
     },
     output: {
         path: path.resolve(__dirname, './dist/'),
@@ -47,7 +47,7 @@ module.exports = {
     plugins:[
         new CleanWebpackPlugin(),
         new HtmlWebPackPlugin({
-            template: 'src/index.html',
+            template: 'public/index.html',
             inject: true,
             filename: 'index.html'
         }),
