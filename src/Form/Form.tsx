@@ -1,8 +1,8 @@
 import React from 'react'
 import './Form.scss'
 
-const states = require('../static/states');
-const interests = require('../static/interests');
+import states from "../../public/json/states.json";
+import interests from "../../public/json/interests.json";
 
 
 const Dropdown = (props: any) => {
