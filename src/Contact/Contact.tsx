@@ -11,7 +11,7 @@ export default function Contact(){
     return(
         <div>
         <h3></h3>
-        <form action="/api/contact.php" >
+        <form onSubmit={submitForm} >
             <div>
                 <input type="text" placeholder="Enter Full Name"/>
             </div>
@@ -25,7 +25,7 @@ export default function Contact(){
                 
             </div>
             <div>
-                <textarea placeholder="Please enter any questions or comments" cols={3}></textarea>
+                <textarea placeholder="Please enter any questions or comments" cols={100} rows={5}></textarea>
             </div>
             <div>
                 <input type="submit" name="Submit" />
