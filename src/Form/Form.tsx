@@ -42,7 +42,7 @@ function FormBody(){
     return(
         <div className="form">
         <h1>Register Now!</h1>
-        <form action="/api/form.php" method="POST">
+        <form onSubmit={submit} method="POST">
                 <div className="form form-group">
                     <label id="applicant_name_label" htmlFor="applicant_name">Applicant Name:</label>
                     <input id="applicant_name" type="text"/>
