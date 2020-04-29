@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contact.scss';
 
-const interests = require('../static/interests')
+import programs from "../../public/json/programs.json";
 
 export default function Contact(){
     return(
