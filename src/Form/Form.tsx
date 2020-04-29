@@ -4,6 +4,9 @@ import './Form.scss'
 import states from "../../public/json/states.json";
 import interests from "../../public/json/interests.json";
 
+const submit = () => {
+
+}
 
 const Dropdown = (props: any) => {
 
