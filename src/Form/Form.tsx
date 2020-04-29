@@ -20,11 +20,12 @@ const Dropdown = (props: any) => {
         {
             <option key={obj.id} value={obj.value}>
                 {obj.name}
-                </option>
+            </option>
         });
 
     return(
         <select id={props.id} className="form-group dropdown" onChange={handleChange}>
+            <option>Select a value</option>
             {options}
         </select>
     );
