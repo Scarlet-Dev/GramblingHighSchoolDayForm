@@ -18,9 +18,11 @@ const Dropdown = (props: any) => {
     let arrayOfData = props.data;
     let options= arrayOfData.map((obj: any) =>
         {
-            <option key={obj.id} value={obj.value}>
-                {obj.name}
-            </option>
+            return(
+                <option key={obj.id} value={obj.value}>
+                    {obj.id}
+                </option>
+                )
         });
 
     return(
