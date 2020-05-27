@@ -4,9 +4,10 @@
   "description": "Form for bi-annual High School Day",
   "main": "./src/index.tsx",
   "readme": "./README.md",
+  "proxy":"http://localhost:3001/",
   "repository": {
     "url": "https://github.com/Scarlet-Dev/GramblingHighSchoolDayForm",
-    "type": "private"
+    "type": "public"
   },
   "scripts": {
     "start": "webpack-dev-server --content-base src --sass --hot --history-api-fallback",
