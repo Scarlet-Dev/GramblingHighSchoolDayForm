@@ -56,7 +56,9 @@ class BaseDBModel{
     }
 
     async SeedTable(tblName, data){
-
+        this._db.seed.run({
+            
+        })
     }
 
     async SelectTable(){
