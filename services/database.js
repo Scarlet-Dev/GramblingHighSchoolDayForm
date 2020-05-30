@@ -12,7 +12,7 @@ class BaseDBModel{
         })
     }
 
-    async CreateTable(tblName, cols){
+    async CreateTable(tblName, cols, schName = null){
         this._db.schema.createTable(tblName, function(table){
             table.increments();
         })
