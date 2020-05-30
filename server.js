@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 
 const mailService = require('./services/email');
-const dbService = require('./services/database')
+import { GramHighSchoolDb } from "./services/database";
 
 // Spinning up settings
 //
