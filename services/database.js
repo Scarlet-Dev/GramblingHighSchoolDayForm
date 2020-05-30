@@ -18,7 +18,40 @@ class BaseDBModel{
         }
 
         this._db.schema.createTable(tblName, function(table){
-            table.increments();
+            cols.map(function(colItem) {
+                switch (typeof colItem.type){
+                    case "string":
+                        table.string(colItem.name, 255);
+
+                    case "number":
+                        if(colItem.useId){
+                            table.increments(colItem.name);
+                        }
+                        else{
+                            table.integer(colItem.name);
+                        }
+
+                    case "boolean":
+                        table.boolean(colItem.name);
+
+                    case "bigint":
+                        table.decimal(colItem.name, 2, 8)
+                    
+                    case "object":
+                        if(colItem.type instanceof Date){
+                            table.dateTime(colItem.name, {
+                                useTz: false,
+                                precision: 2
+                            });
+                        }
+                        else if(colItem.type instanceof Array){
+                            table.json(colItem.name)
+                        }
+                        
+                    default:
+                        table.string(colItem, 1000);
+                }
+            })
         })
     }
 
