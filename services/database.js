@@ -13,6 +13,10 @@ class BaseDBModel{
     }
 
     async CreateTable(tblName, cols, schName = null){
+        if(schName !== null || schName !== undefined){
+            this._db.schema.createSchema(schName)
+        }
+
         this._db.schema.createTable(tblName, function(table){
             table.increments();
         })
