@@ -63,7 +63,7 @@ class FormBody extends React.Component<any, IForm>{
         axios.post(data).then().catch().finally();
     }
 
-    componentWillMount(){
+    componentDidMount(){
 
         Promise.all([this.getStates(), this.getStudentInterests()])
         .then((results) => {

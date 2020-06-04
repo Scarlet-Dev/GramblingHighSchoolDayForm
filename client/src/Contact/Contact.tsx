@@ -43,7 +43,7 @@ class ContactForm extends React.Component<any, IContactForm> {
         return axios.get("").then( res => res.data)
     }
 
-    componentWillMount(){
+    componentDidMount(){
         Promise.all([this.getPrograms()])
         .then((results) => {
             this.setState({
