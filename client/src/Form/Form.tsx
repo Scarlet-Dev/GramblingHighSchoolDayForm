@@ -50,9 +50,11 @@ class FormBody extends React.Component<any, IForm>{
         }
     }
 
-    let today = new Date();
-    let maxDate = new Date(today.getUTCFullYear(), today.getMonth(), today.getDate());
+    getStudentInterests () {
+        return axios.get("").then(res => res.data);
+    }
     
+    }
 
 
     return(
