@@ -33,6 +33,15 @@ const Dropdown = (props: any) => {
     );
 }
 
+interface IForm{
+    maxDate: Date,
+    states:any[],
+    interests:any[],
+    form:{
+        name:string
+    }
+
+}
 
 function FormBody(){
 
