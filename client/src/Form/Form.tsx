@@ -59,6 +59,10 @@ class FormBody extends React.Component<any, IForm>{
     }
     
     
+    onFormSubmit (data: any) {
+        axios.post(data).then().catch().finally();
+    }
+
     return(
         <div className="form">
         <h1>Register Now!</h1>
