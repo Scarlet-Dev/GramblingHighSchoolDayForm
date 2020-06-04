@@ -42,8 +42,19 @@ interface IForm{
     }
 
 }
+class FormBody extends React.Component<any, IForm>{
 
-function FormBody(){
+    constructor(props:any){
+        super(props);
+        this.state = {
+            maxDate: new Date(),
+            states: [],
+            interests: [],
+            form:{
+                name: ""
+            }
+        }
+    }
 
     let today = new Date();
     let maxDate = new Date(today.getUTCFullYear(), today.getMonth(), today.getDate());
