@@ -54,9 +54,11 @@ class FormBody extends React.Component<any, IForm>{
         return axios.get("").then(res => res.data);
     }
     
+    getStates (){
+        return axios.get("").then(res => { res.data });
     }
-
-
+    
+    
     return(
         <div className="form">
         <h1>Register Now!</h1>
