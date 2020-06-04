@@ -85,3 +85,9 @@ class ContactForm extends React.Component<any, IContactForm> {
         )
     }
 }
+
+export default function Contact(){
+    return (
+        <ContactForm />
+    )
+}
