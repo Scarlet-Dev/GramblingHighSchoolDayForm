@@ -38,6 +38,11 @@ class ContactForm extends React.Component<any, IContactForm> {
             programs:[]
         }
     }
+
+    getPrograms () {
+        return axios.get("").then( res => res.data)
+    }
+
     render(){
 
         return(
