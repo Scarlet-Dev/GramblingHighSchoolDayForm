@@ -2,12 +2,6 @@ import React from 'react';
 import axios from "axios";
 import './Contact.scss';
 
-import programs from "../../public/json/programs.json";
-
-const submitForm = () => {
-
-}
-
 const Dropdown = (props: any) => {
 
     let handleChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
