@@ -63,6 +63,20 @@ class FormBody extends React.Component<any, IForm>{
         axios.post(data).then().catch().finally();
     }
 
+    componentWillMount(){
+
+        Promise.all([this.getStates(), this.getStudentInterests()])
+        .then((results) => {
+            this.setState({
+                states: results[0],
+                interests: results[1]
+            })
+        });
+        
+        let today = new Date();
+        this.setState({ maxDate: new Date(today.getUTCFullYear(), today.getMonth(), today.getDate()) });
+    }
+
     return(
         <div className="form">
         <h1>Register Now!</h1>
