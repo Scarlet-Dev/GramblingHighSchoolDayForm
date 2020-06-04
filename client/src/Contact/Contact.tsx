@@ -52,6 +52,10 @@ class ContactForm extends React.Component<any, IContactForm> {
         })
     }
 
+    onFormSubmit(){
+        axios.post("").then().catch().finally()
+    }
+
     render(){
 
         return(
