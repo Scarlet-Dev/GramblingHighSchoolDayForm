@@ -1,6 +1,7 @@
 const knex = require('knex');
 
 export default class BaseDBModel{
+    constructor(dbName, schName){
         (async () => {
             this._db = knex({
                 client: 'sqlite3',
@@ -9,6 +10,7 @@ export default class BaseDBModel{
                 }
             })
         })
+        this._schName = schName;
     }
 
     async CreateTable(tblName, cols, schName = null){
