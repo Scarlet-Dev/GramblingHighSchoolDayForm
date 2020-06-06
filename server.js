@@ -27,6 +27,9 @@ function CreateandSeedDatabase(){
 
 }
 
+/**
+ * Services and middleware
+ */
 const corsOptions = {
     origin: process.env.ORIGIN | '*',
     optionsSuccessStatus: 200
