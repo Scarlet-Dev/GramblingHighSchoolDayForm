@@ -1,7 +1,6 @@
 "use strict";
 
 import expMailer from 'express-nodemailer';
-const env = require('dotenv');
 
 export default class BaseEmailService{
     constructor(){
