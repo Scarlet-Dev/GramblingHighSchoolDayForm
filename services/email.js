@@ -1,3 +1,5 @@
+"use strict";
+
 import expMailer from 'express-nodemailer';
 const env = require('dotenv');
 
