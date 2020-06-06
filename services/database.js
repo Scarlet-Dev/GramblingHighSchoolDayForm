@@ -15,7 +15,7 @@ export default class BaseDBModel{
 
     async CreateTable(tblName, cols){
         if(schName !== null || schName !== undefined){
-            this._db.schema.createSchema(schName)
+            this._db.schema.createSchema(this._schName)
         }
 
         this._db.schema.createTable(tblName, function(table){
