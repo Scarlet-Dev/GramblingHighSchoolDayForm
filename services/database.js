@@ -62,20 +62,28 @@ export default class BaseDBModel{
         })
     }
 
-    async SelectTable(){
-
+    async SelectTable(tblName){
+        this._db(tblName).withSchema(this._schName).select({
+            
+        })
     }
 
-    async InsertIntoTable(){
+    async InsertIntoTable(tblName){
+        this._db(tblName).withSchema(this._schName).insert({
 
+        })
     }
 
-    async UpdateTable(){
+    async UpdateTable(tblName){
+        this._db.withSchema(this._schName).update({
 
+        }).table(tblName).where({
+
+        })
     }
 
-    async DropTable(){
-
+    async DropTable(tblName){
+        this._db.withSchema(this._schName).delete().table(tblName).where()
     }
 }
 
