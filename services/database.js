@@ -1,7 +1,6 @@
 const knex = require('knex');
 
-class BaseDBModel{
-    constructor(dbName){
+export default class BaseDBModel{
         (async () => {
             this._db = knex({
                 client: 'sqlite3',
@@ -78,5 +77,4 @@ class BaseDBModel{
     }
 }
 
-export default GramHighSchoolDb = new BaseDBModel('');
 
