@@ -86,5 +86,10 @@ app.post("/api/saveContactForm", (req, res) => {
 //
 //////////////////
 app.listen(app.get("port", () => {
+    console.log("Starting server...");
+    console.log("Starting client");
+
+    CreateandSeedDatabase();
+
     console.log("Listening right now.")
 }))
