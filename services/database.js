@@ -1,3 +1,4 @@
+'use strict';
 const knex = require('knex');
 
 export default class BaseDBModel{
