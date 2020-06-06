@@ -19,11 +19,14 @@ if(process.env.NODE_ENV === "production"){
     app.use(express.static("client/build"));
 }
 
-// Services and middleware
-//
-//
-////////////////////////////
-mailService.default(app);
+/**
+ * 
+ */
+function CreateandSeedDatabase(){
+    console.log("Connecting and initialize database");
+
+}
+
 const corsOptions = {
     origin: process.env.ORIGIN | '*',
     optionsSuccessStatus: 200
