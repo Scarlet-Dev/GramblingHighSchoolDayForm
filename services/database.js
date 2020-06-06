@@ -13,7 +13,7 @@ export default class BaseDBModel{
         this._schName = schName;
     }
 
-    async CreateTable(tblName, cols, schName = null){
+    async CreateTable(tblName, cols){
         if(schName !== null || schName !== undefined){
             this._db.schema.createSchema(schName)
         }
