@@ -1,8 +1,9 @@
 import expMailer from 'express-nodemailer';
 const env = require('dotenv');
 
-
-const options = {
+export default class BaseEmailService{
+    constructor(){
+        this.options = {
     host: process.env.EMAIL_HOST,
     port: process.env.EMAIL_PORT,
     secure: "true",
@@ -11,11 +12,12 @@ const options = {
         pass: process.env.EMAIL_PASS
     }
 }
-
-const defaults = {
+        this.defaults = {
     from: ""
 }
+    }
 
-export default function SendMail(app){
-    expMailer(app, options, defaults);
+    SendMail(app){
+        expMailer(app, this.options, this.defaults)
+    }
 }
