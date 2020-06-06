@@ -6,6 +6,9 @@ const faker = require('faker');
 const mailService = require('./services/email').default;
 const dbService = require("./services/database").default;
 
+const gramMailService = new mailService();
+const gramDbService = new dbService(process.env.DATABASE_NAME, process.env.SCHEMA_NAME);
+
 // Spinning up settings
 //
 //
