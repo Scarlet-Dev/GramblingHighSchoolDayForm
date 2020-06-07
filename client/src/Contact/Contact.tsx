@@ -26,8 +26,18 @@ const Dropdown = (props: any) => {
     );
 }
 
+// Might change to three programs interests instead of one.
+type Form = {
+    name: string,
+    phoneNumber: string,
+    email: string,
+    programs: number,
+    additionalQuestion: string
+}
+
 interface IContactForm{
-    programs: []
+    programs: [],
+    form: Form
 }
 
 class ContactForm extends React.Component<any, IContactForm> {
