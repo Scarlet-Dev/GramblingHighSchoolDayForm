@@ -4,7 +4,7 @@ import * as faker from 'faker';
 
 import About from '../About/About';
 import Contact from '../Contact/Contact';
-import Form from '../Form/Form';
+import Registration from '../Register/Register';
 
 import './App.scss';
 
@@ -167,7 +167,7 @@ export default function App(){
                     <About />
                 </Route>
                 <Route path="/register">
-                    <Form />
+                    <Registration />
                 </Route>
                 <Route path="/contact">
                     <Contact />
