@@ -2,31 +2,6 @@ import React from 'react'
 import axios from "axios";
 import './Form.scss'
 
-const Dropdown = (props: any) => {
-
-    let handleChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
-        let selectedValue = event.target.value;
-        props.onSelectChange(selectedValue);
-    }
-
-    let arrayOfData = props.data;
-    let options= arrayOfData.map((obj: any) =>
-        {
-            return(
-                <option key={obj.id} value={obj.value}>
-                    {obj.id}
-                </option>
-                )
-        });
-
-    return(
-        <select id={props.id} className="form-group dropdown" onChange={handleChange || props.handleChange}>
-            <option>Select a value</option>
-            {options}
-        </select>
-    );
-}
-
 // Might include multiple interests instead of single.
 type Form = {
     name:string,
@@ -107,6 +82,30 @@ class RegisterForm extends React.Component<any, IForm>{
         this.setState({ maxDate: new Date(today.getUTCFullYear(), today.getMonth(), today.getDate()) });
     }
 
+    Dropdown = (props: any) => {
+
+        let handleChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
+            console.log(`Value change to ${event.target.value}`)
+        }
+    
+        let arrayOfData = props.data;
+        let options= arrayOfData.map((obj: any) =>
+            {
+                return(
+                    <option key={obj.id} value={obj.value}>
+                        {obj.id}
+                    </option>
+                    )
+            });
+    
+        return(
+            <select id={props.id} className="form-group dropdown" onChange={handleChange || props.handleChange}>
+                <option>Select a value</option>
+                {options}
+            </select>
+        );
+    }
+    
     render(){
         return(
             <div className="form">
@@ -122,7 +121,7 @@ class RegisterForm extends React.Component<any, IForm>{
                     </div>
                     <div className="form form-group">
                         <label id="applicant_classification" htmlFor="applicant_classification">Applicant's Current Year: </label>
-                        <Dropdown data={this.state.classification}/>
+                        <this.Dropdown data={this.state.classification}></this.Dropdown>
                      </div>
                     <div className="form form-group">
                         <label id="applicant_dob_label" htmlFor="applicant_dob">Applicant's Date of Birth: </label>
@@ -135,7 +134,7 @@ class RegisterForm extends React.Component<any, IForm>{
                         </div>
                         <div>
                             <label>Applicant's State: </label>
-                            <Dropdown id="applicant_state" data={this.state.states}>State</Dropdown>
+                            <this.Dropdown id="applicant_state" data={this.state.states}>State</this.Dropdown>
                         </div>
                         <div>
                             <label id="applicant_zip_code_label" htmlFor="applicant_zip_code">Applicant's ZIP Code: </label>
@@ -148,7 +147,7 @@ class RegisterForm extends React.Component<any, IForm>{
                     </div>
                     <div className="form form-group">
                         <label id="" htmlFor="applicant_interests">Please select an interests: </label>
-                        <Dropdown id="applicant_interests" data={this.state.interests}>Please select an interests</Dropdown>
+                        <this.Dropdown id="applicant_interests" data={this.state.interests}>Please select an interests</this.Dropdown>
                     </div>
 
                     <div className="form form-group">
