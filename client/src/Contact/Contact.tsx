@@ -19,7 +19,7 @@ const Dropdown = (props: any) => {
         });
 
     return(
-        <select id={props.id} className="form-group dropdown" onChange={handleChange}>
+        <select id={props.id} className="form-group dropdown" onChange={handleChange || props.handleChange}>
             <option>Select a value</option>
             {options}
         </select>
