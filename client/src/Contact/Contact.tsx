@@ -5,8 +5,7 @@ import './Contact.scss';
 const Dropdown = (props: any) => {
 
     let handleChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
-        let selectedValue = event.target.value;
-        props.onSelectChange(selectedValue);
+        console.log(`Value change to ${event.target.value}`)
     }
 
     let arrayOfData = props.data;
