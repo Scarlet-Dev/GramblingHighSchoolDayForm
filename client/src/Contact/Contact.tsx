@@ -44,7 +44,14 @@ class ContactForm extends React.Component<any, IContactForm> {
     constructor(props:any){
         super(props);
         this.state= {
-            programs:[]
+            programs:[],
+            form: {
+                name: "",
+                phoneNumber: "",
+                email: "",
+                programs: 0,
+                additionalQuestion: ""
+            }
         }
     }
 
