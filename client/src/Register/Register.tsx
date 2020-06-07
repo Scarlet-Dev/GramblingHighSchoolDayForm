@@ -55,6 +55,10 @@ class RegisterForm extends React.Component<any, IForm>{
         return axios.get("").then(res => res.data);
     }
     
+    postRegistrationForm(form: Form){
+        axios.post("", JSON.stringify(form)).then().catch().finally();
+    }
+
     handleChange(event: React.ChangeEvent<HTMLInputElement & HTMLSelectElement>){
         var target = event.target;
         var name = target.name;
