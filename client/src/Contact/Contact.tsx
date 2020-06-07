@@ -44,6 +44,12 @@ class ContactForm extends React.Component<any, IContactForm> {
         })
     }
 
+    // Need to apply actual type on Form Submit
+    handleSubmit(event: React.FormEvent){
+        
+        this.postContactForm(this.state.form);
+    }
+
     Dropdown = (props: any) => {
 
         let handleChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
