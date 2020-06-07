@@ -63,8 +63,8 @@ class RegisterForm extends React.Component<any, IForm>{
         
     }
 
-    onFormSubmit (event: any) {
-        // axios.post(data).then().catch().finally();
+    handleSubmit (event: any) {
+        this.postRegistrationForm(this.state.form);
     }
 
     componentDidMount(){
@@ -110,7 +110,7 @@ class RegisterForm extends React.Component<any, IForm>{
         return(
             <div className="form">
             <h1>Register Now!</h1>
-            <form onSubmit={this.onFormSubmit} method="POST">
+            <form onSubmit={this.handleSubmit} method="POST">
                     <div className="form form-group">
                         <label id="applicant_name_label" htmlFor="applicant_name">Applicant Name:</label>
                         <input id="applicant_name" type="text" onChange={this.handleChange}/>
