@@ -87,7 +87,7 @@ class ContactForm extends React.Component<any, IContactForm> {
         return(
             <div>
                 <h3></h3>
-                <form onSubmit={this.onFormSubmit} >
+                <form onSubmit={this.handleSubmit} >
                     <div>
                         <input type="text" placeholder="Enter Full Name"/>
                     </div>
