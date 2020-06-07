@@ -2,30 +2,6 @@ import React from 'react';
 import axios from "axios";
 import './Contact.scss';
 
-const Dropdown = (props: any) => {
-
-    let handleChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
-        console.log(`Value change to ${event.target.value}`)
-    }
-
-    let arrayOfData = props.data;
-    let options= arrayOfData.map((obj: any) =>
-        {
-            return(
-                <option key={obj.id} value={obj.value}>
-                    {obj.id}
-                </option>
-                )
-        });
-
-    return(
-        <select id={props.id} className="form-group dropdown" onChange={handleChange || props.handleChange}>
-            <option>Select a value</option>
-            {options}
-        </select>
-    );
-}
-
 // Might change to three programs interests instead of one.
 type Form = {
     name: string,
@@ -68,8 +44,28 @@ class ContactForm extends React.Component<any, IContactForm> {
         })
     }
 
-    onFormSubmit(){
-        axios.post("").then().catch().finally()
+    Dropdown = (props: any) => {
+
+        let handleChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
+            console.log(`Value change to ${event.target.value}`)
+        }
+    
+        let arrayOfData = props.data;
+        let options= arrayOfData.map((obj: any) =>
+            {
+                return(
+                    <option key={obj.id} value={obj.value}>
+                        {obj.id}
+                    </option>
+                    )
+            });
+    
+        return(
+            <select id={props.id} className="form-group dropdown" onChange={handleChange || props.handleChange}>
+                <option>Select a value</option>
+                {options}
+            </select>
+        );
     }
 
     render(){
