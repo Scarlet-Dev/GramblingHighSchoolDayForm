@@ -84,7 +84,7 @@ class ContactForm extends React.Component<any, IContactForm> {
                         <input type="email" placeholder="Enter Email Address"/>
                     </div>
                     <div>
-                        <Dropdown data={this.state.programs}/>
+                        <this.Dropdown data={this.state.programs}/>
                     </div>
                     <div>
                         <textarea placeholder="Please enter any questions or comments" cols={100} rows={5}></textarea>
